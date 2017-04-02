@@ -37,7 +37,7 @@ public class EmailSigReaderWriter {
     }
 
     public EmailSigResponse readTestOut(){
-        return readFile(config.config().getString("input.test.reponse.file"),
+        return readFile(config.config().getString("input.test.response.file"),
                 new TypeReference<EmailSigResponse>(){});
     }
 
