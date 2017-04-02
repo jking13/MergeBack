@@ -15,6 +15,7 @@ Simple application that interfaces with CircleBack's web api to merge existing c
 ## Stack
 - java 8
 - gradle 
+- apache commons configuration (https://commons.apache.org/proper/commons-configuration/)
 - guice (https://github.com/google/guice/wiki)
 - retrofit (http://square.github.io/retrofit/)
 - testng
