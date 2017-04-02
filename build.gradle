@@ -1,0 +1,55 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+}
+version="0.9.0"
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+jar {
+    baseName = 'MergeBack'
+    version =  "$version"
+}
+applicationDefaultJvmArgs = [ '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8001' ]
+mainClassName = "com.jking.mergeback.Application"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("com.fasterxml.jackson.core:jackson-core:2.8.7")
+    compile("com.fasterxml.jackson.core:jackson-annotations:2.8.7")
+    compile("com.fasterxml.jackson.core:jackson-databind:2.8.7")
+    compile('com.squareup.retrofit2:retrofit:2.1.0')
+    compile 'com.squareup.retrofit2:converter-jackson:2.1.0'
+    compile('org.apache.commons:commons-configuration2:2.1.1')
+    compile('com.google.inject:guice:4.0')
+    compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.3'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
+
+    
+    compileOnly "org.projectlombok:lombok:1.16.16"
+
+
+    testCompile("org.mockito:mockito-core:1.9.5")
+    testCompile("org.testng:testng:6.8.8")
+}
+
+test {
+        useTestNG() 
+    }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.4.1'
+}
+
+
