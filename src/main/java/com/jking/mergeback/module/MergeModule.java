@@ -27,11 +27,6 @@ import java.io.IOException;
 public class MergeModule extends AbstractModule {
     @Override
     protected void configure() {
-        bind(PropertiesConfig.class);
-        bind(EmailSigReaderWriter.class);
-        bind(PhoneNumbersItemMerger.class);
-        bind(ContactsItemMerger.class);
-        bind(MergeWorker.class);
     }
 
     @Provides
