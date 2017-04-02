@@ -2,7 +2,9 @@
 Simple application that interfaces with CircleBack's web api to merge existing contacts
 
 ## Running
-`./gradlew run`
+- Change `api.key` property in `src/main/resources/application.properties` to your api key
+ - If you don't wish to use the api then setting `input.test.response.enabled=true` will emulate api interaction using the file configured by `input.test.reponse.file`
+- `./gradlew run`
 
 ## Building
 `./gradlew build`
